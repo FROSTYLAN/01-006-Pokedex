@@ -47,7 +47,9 @@ const Login = () => {
                     <div className='rectangle small'>
                         <div className='circle one'>
                             <div className='circle two'>
-                                <div className='circle'></div>
+                                <div className='circle'>
+                                    <div className='circle' style={{ background: "gray", width:"60%", height:"60%"}}></div>
+                                </div>
                             </div>
                         </div>
                     </div>

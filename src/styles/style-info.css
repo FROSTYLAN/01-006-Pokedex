@@ -1,9 +1,10 @@
+.Info .main-info {
+  margin: 0 1rem;
+}
 .Info .info-container {
   margin: auto;
   margin-top: 10rem;
   padding-bottom: 3rem;
-  margin-right: 1rem;
-  margin-left: 1rem;
   max-width: 1100px;
   border-radius: 4px;
   box-shadow: 0px 2px 16px 0px #00000026;
@@ -72,8 +73,6 @@
   margin-top: 3rem;
   margin-bottom: 3rem;
   padding-bottom: 2rem;
-  margin-right: 1rem;
-  margin-left: 1rem;
   max-width: 1100px;
   border-radius: 4px;
   box-shadow: 0px 2px 16px 0px #00000026;

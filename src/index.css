@@ -56,17 +56,26 @@ button {
   justify-content: center;
   align-items: center;
 }
+.login form {
+  min-width: 60%;
+}
+.login input {
+  width: 70%;
+}
+.login button {
+  width: 30%;
+}
 .login section:nth-child(3) {
   align-items: flex-end;
 }
 .login img {
-  width: 50%;
+  max-width: 50%;
 }
 .rectangle {
   top: 100px;
   display: flex;
   align-items: flex-end;
-  width: 98vw;
+  width: 99.5vw;
   height: 24vh;
   background: #dd1a1a;
 }
@@ -91,9 +100,9 @@ button {
 .two {
   background: #fff;
 }
-@media screen and (max-width: 300px) {
-  .login input {
-    width: 40vw;
+@media screen and(max-width: 925px) {
+  .login form {
+    width: 70%;
   }
 }
 

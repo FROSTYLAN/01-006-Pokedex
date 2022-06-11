@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import pokemons from "../pokemons.json";
+import "../styles/style-search.css";
 
 const Search = () => {
   const [searchField, setSearchField] = useState("");
@@ -27,7 +28,7 @@ const Search = () => {
         onChange={(e) => handleChange(e.target.value)}
       />
       <button>Search</button>
-      <div>
+      <div className="results-container">
         {searchField === "" && " "
           ? null
           : results.map((result, i) => (

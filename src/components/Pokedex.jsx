@@ -85,7 +85,7 @@ const Pokedex = () => {
             <li onClick={() => setOffset(6 * 16)} className="page">
               7
             </li>
-            <li className="next-pages">{">>"}</li>
+            <li className="next-pages">{">"}</li>
           </ul>
         </div>
       </main>

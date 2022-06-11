@@ -1,0 +1,14 @@
+.search .results-container {
+  position: absolute;
+  width: 40%;
+  background-color: #fff;
+  padding-left: 1rem;
+  z-index: 3;
+}
+.search p {
+  margin: 0.5rem 0;
+}
+.search a {
+  text-decoration: none;
+  color: #000;
+}

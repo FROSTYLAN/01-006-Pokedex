@@ -11,6 +11,7 @@ const Pokedex = () => {
   const [pokemon, setPokemon] = useState([]);
   const [types, setTypes] = useState([]);
   const [offset, setOffset] = useState(0);
+  const [nextSet, setNextSet] = useState(0);
 
   useEffect(() => {
     axios
@@ -64,28 +65,72 @@ const Pokedex = () => {
 
         <div className="pages">
           <ul>
-            <li onClick={() => setOffset(0 * 16)} className="page">
-              1
+            {nextSet < 1 ? null : (
+              <li
+                onClick={() => setNextSet(nextSet - 1)}
+                className="next-pages"
+              >
+                {"<"}
+              </li>
+            )}
+            <li
+              onClick={() => setOffset((0 + 7 * nextSet) * 16)}
+              className="page"
+            >
+              {0 + 7 * nextSet}
             </li>
-            <li onClick={() => setOffset(1 * 16)} className="page">
-              2
+            <li
+              onClick={() => setOffset((1 + 7 * nextSet) * 16)}
+              className="page"
+            >
+              {1 + 7 * nextSet}
             </li>
-            <li onClick={() => setOffset(2 * 16)} className="page">
-              3
+            <li
+              onClick={() => setOffset((2 + 7 * nextSet) * 16)}
+              className="page"
+            >
+              {2 + 7 * nextSet}
             </li>
-            <li onClick={() => setOffset(3 * 16)} className="page">
-              4
+            <li
+              onClick={() => setOffset((3 + 7 * nextSet) * 16)}
+              className="page"
+            >
+              {3 + 7 * nextSet}
             </li>
-            <li onClick={() => setOffset(4 * 16)} className="page">
-              5
+            <li
+              onClick={() => setOffset((4 + 7 * nextSet) * 16)}
+              className="page"
+            >
+              {4 + 7 * nextSet}
             </li>
-            <li onClick={() => setOffset(5 * 16)} className="page">
-              6
+            <li
+              onClick={() => setOffset((5 + 7 * nextSet) * 16)}
+              className="page"
+            >
+              {5 + 7 * nextSet}
             </li>
-            <li onClick={() => setOffset(6 * 16)} className="page">
-              7
+            <li
+              onClick={() => setOffset((6 + 7 * nextSet) * 16)}
+              className="page"
+            >
+              {6 + 7 * nextSet}
             </li>
-            <li className="next-pages">{">"}</li>
+
+            {nextSet < 9 ? (
+              <li
+                onClick={() => setNextSet(nextSet + 1)}
+                className="next-pages"
+              >
+                {">"}
+              </li>
+            ) : (
+              <li
+                onClick={() => setOffset((7 + 7 * nextSet) * 16)}
+                className="page"
+              >
+                {7 + 7 * nextSet}
+              </li>
+            )}
           </ul>
         </div>
       </main>

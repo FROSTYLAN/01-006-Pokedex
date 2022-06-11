@@ -28,7 +28,7 @@ const PokedexInfo = () => {
         <div className="info-container">
           <figure>
             <img
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.order}.png`}
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
               alt=""
             />
           </figure>

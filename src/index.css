@@ -162,6 +162,7 @@ main {
 .search-pokemon select {
   width: 30%;
   margin-left: 2rem;
+  padding: 0 0.5rem;
 }
 .list-pokemon {
   display: flex;
@@ -384,6 +385,18 @@ main {
   );
 }
 .card-dragon {
+  border: 10px solid #8dd6e0;
+  color: #478a93;
+}
+.flying {
+  background: linear-gradient(
+    179.75deg,
+    #478a93 -19.96%,
+    #56a4ae 43.67%,
+    #a2bec1 138.4%
+  );
+}
+.card-flying {
   border: 10px solid #8dd6e0;
   color: #478a93;
 }

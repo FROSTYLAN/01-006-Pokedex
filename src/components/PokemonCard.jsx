@@ -8,7 +8,7 @@ const PokemonCard = ({ pokemonUrl }) => {
   useEffect(() => {
     axios.get(pokemonUrl).then((res) => setPokemon(res.data));
   }, [pokemonUrl]);
-
+  console.log(pokemon);
   return (
     <div className="card">
       <Link
@@ -18,7 +18,7 @@ const PokemonCard = ({ pokemonUrl }) => {
         <figure className={pokemon.types?.[0].type.name}>
           <img
             width="100px"
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.order}.png`}
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
             alt=""
           />
         </figure>

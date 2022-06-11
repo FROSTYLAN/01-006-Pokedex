@@ -11,9 +11,16 @@ const PokemonCard = ({ pokemonUrl }) => {
 
   return (
     <div className="card">
-      <Link className="card-pokemon" to={`/pokedex/${pokemon.name}`}>
-        <figure>
-          <img src={pokemon.sprites?.front_default} alt="" />
+      <Link
+        className={`card-pokemon card-${pokemon.types?.[0].type.name}`}
+        to={`/pokedex/${pokemon.name}`}
+      >
+        <figure className={pokemon.types?.[0].type.name}>
+          <img
+            width="100px"
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.order}.png`}
+            alt=""
+          />
         </figure>
         <div className="name-pokemon">
           <h2>{pokemon.name}</h2>

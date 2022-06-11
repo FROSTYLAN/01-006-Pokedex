@@ -66,7 +66,7 @@ button {
   top: 100px;
   display: flex;
   align-items: flex-end;
-  width: 100vw;
+  width: 98vw;
   height: 24vh;
   background: #dd1a1a;
 }
@@ -128,10 +128,13 @@ b {
   color: #fe1936;
 }
 main {
-  margin: 2vw 4vw;
+  margin: 3vw 4vw;
 }
 /**************************************************************/
-
+.inicio {
+  margin: auto;
+  max-width: 1200px;
+}
 .search-pokemon {
   width: 100%;
   display: flex;
@@ -165,7 +168,6 @@ main {
   justify-content: center;
 }
 .card-pokemon {
-  border: 10px solid #dd1a1a;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -191,18 +193,6 @@ main {
 /* card */
 .card .card-pokemon figure {
   text-align: center;
-  background-image: radial-gradient(
-    circle at 53.79% 93.28%,
-    #ff9233 0,
-    #ff7d42 12.5%,
-    #ff674d 25%,
-    #ff5054 37.5%,
-    #ff3858 50%,
-    #e41f59 62.5%,
-    #cc025b 75%,
-    #b6005d 87.5%,
-    #a2005f 100%
-  );
 }
 .card .card-pokemon {
   text-decoration: none;
@@ -220,6 +210,7 @@ main {
   text-align: center;
   border-bottom: 1px solid rgb(193, 193, 193);
   padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 .card .card-pokemon .stats {
   display: flex;
@@ -228,4 +219,235 @@ main {
 .card .card-pokemon .stat {
   width: 50px;
   text-align: center;
+  margin-bottom: 1rem;
+}
+
+.grass {
+  background: linear-gradient(
+    178.92deg,
+    #7ec6c5 0.92%,
+    #abdac6 47.96%,
+    #cae099 99.08%
+  );
+}
+.card-grass {
+  border: 10px solid #73c589;
+  color: #416460;
+}
+.fire {
+  background: linear-gradient(
+    176.37deg,
+    #f96d6f -32.26%,
+    #e35825 22.55%,
+    #e8ae1b 125.72%
+  );
+}
+.card-fire {
+  border: 10px solid #e6901e;
+  color: #e75c35;
+}
+.water {
+  background: linear-gradient(
+    179.57deg,
+    #133258 -70.14%,
+    #1479fb 56.16%,
+    #82b2f1 214.85%
+  );
+}
+.card-water {
+  border: 10px solid #82b2f1;
+  color: #1479fb;
+}
+.bug {
+  background: linear-gradient(
+    177.56deg,
+    #62db60 -58.92%,
+    #3bb039 16.57%,
+    #aaffa8 209.53%
+  );
+}
+.card-bug {
+  border: 10px solid #c3dea3;
+  color: #4ab648;
+}
+.normal {
+  background: linear-gradient(
+    181.51deg,
+    #735259 -6.44%,
+    #bc6b7c 121.95%,
+    #7c3f4c 186.11%
+  );
+}
+.card-normal {
+  border: 10px solid #ba707f;
+  color: #735259;
+}
+.fighting {
+  background: linear-gradient(
+    176.83deg,
+    #96402a -8.78%,
+    #f1613c 169.09%,
+    #cb735d 242.33%
+  );
+}
+.card-fighting {
+  border: 10px solid #e95b36;
+  color: #96402a;
+}
+.poison {
+  background: linear-gradient(
+    177.03deg,
+    #5b3184 -11.97%,
+    #a564e3 71.28%,
+    #ce9bff 135.64%
+  );
+}
+.card-poison {
+  border: 10px solid #c48ef9;
+  color: #5b3184;
+}
+.ghost {
+  background: linear-gradient(
+    177.03deg,
+    #323569 -11.97%,
+    #454aa8 57.49%,
+    #787dda 135.64%
+  );
+}
+.card-ghost {
+  border: 10px solid #5a61dd;
+  color: #323569;
+}
+.rock {
+  background: linear-gradient(
+    177.03deg,
+    #7e7e7e -11.97%,
+    #8d8d94 57.49%,
+    #d3d3d3 135.64%
+  );
+}
+.card-rock {
+  border: 10px solid #b9b9ba;
+  color: #7e7e7e;
+}
+.dark {
+  background: linear-gradient(
+    177.03deg,
+    #030706 -11.97%,
+    #0d1211 57.49%,
+    #5a5e5d 135.64%
+  );
+}
+.card-dark {
+  border: 10px solid #4f4f4f;
+  color: #030706;
+}
+.ice {
+  background: linear-gradient(
+    177.03deg,
+    #6fbedf -11.97%,
+    #64cbf5 47.77%,
+    #bdebfe 136.72%
+  );
+}
+.card-ice {
+  border: 10px solid #c4ebfb;
+  color: #6fbedf;
+}
+.steel {
+  background: linear-gradient(
+    179.75deg,
+    #5e736c -19.96%,
+    #728881 43.67%,
+    #a8a8a8 138.4%
+  );
+}
+.card-steel {
+  border: 10px solid #9bb7ad;
+  color: #5e736c;
+}
+.dragon {
+  background: linear-gradient(
+    179.75deg,
+    #478a93 -19.96%,
+    #56a4ae 43.67%,
+    #a2bec1 138.4%
+  );
+}
+.card-dragon {
+  border: 10px solid #8dd6e0;
+  color: #478a93;
+}
+.fairy {
+  background: linear-gradient(
+    179.75deg,
+    #971b45 -19.96%,
+    #c23867 43.67%,
+    #cd7d98 138.4%
+  );
+}
+.card-psychic {
+  border: 10px solid #c5597e;
+  color: #971b45;
+}
+.psychic {
+  background: linear-gradient(
+    179.75deg,
+    #971b45 -19.96%,
+    #c23867 43.67%,
+    #cd7d98 138.4%
+  );
+}
+.card-fairy {
+  border: 10px solid #c5597e;
+  color: #971b45;
+}
+.electric {
+  background: linear-gradient(
+    179.75deg,
+    #0c1395 -19.96%,
+    #2b319b 43.67%,
+    #7075d9 138.4%
+  );
+}
+.card-electric {
+  border: 10px solid #8e94fe;
+  color: #0c1395;
+}
+.ground {
+  background: linear-gradient(
+    179.75deg,
+    #654008 -19.96%,
+    #895c1a 43.67%,
+    #d69638 138.4%
+  );
+}
+.card-ground {
+  border: 10px solid #9c6614;
+  color: #654008;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+}
+.pages ul {
+  list-style: none;
+  display: flex;
+}
+.pages ul li {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  margin: 1rem;
+  line-height: 60px;
+}
+.pages .next-pages {
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  text-align: center;
+  background: #dd1a1a;
+  border-radius: 6px;
+  color: #fff;
 }

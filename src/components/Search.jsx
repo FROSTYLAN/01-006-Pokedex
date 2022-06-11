@@ -26,7 +26,7 @@ const Search = () => {
         placeholder="Search..."
         onChange={(e) => handleChange(e.target.value)}
       />
-      <button>Buscar</button>
+      <button>Search</button>
       <div>
         {searchField === "" && " "
           ? null

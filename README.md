@@ -1,3 +1,9 @@
+# 01-006-Pokedex
+
+App que muestra información detallada de cada pokemón | Búsqueda por nombre con recomendación | Paginación y limite de respuesta | Redux | Consumo de API
+
+- Live Site URL: https://01-006-pokedex.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import LazyLoad from "react-lazy-load";
 
 const PokemonCard = ({ pokemonUrl }) => {
   const [pokemon, setPokemon] = useState({});
@@ -16,11 +17,13 @@ const PokemonCard = ({ pokemonUrl }) => {
         to={`/pokedex/${pokemon.name}`}
       >
         <figure className={pokemon.types?.[0].type.name}>
-          <img
-            width="100px"
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
-            alt=""
-          />
+          <LazyLoad width={"100%"} debounce={false} offsetVertical={200}>
+            <img
+              width="100px"
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
+              alt=""
+            />
+          </LazyLoad>
         </figure>
         <div className="name-pokemon">
           <h2>{pokemon.name}</h2>

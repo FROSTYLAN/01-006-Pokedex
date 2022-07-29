@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import PokemonCard from "./PokemonCard";
 import Search from "./Search";
 import pokedex from "../images/pokedex.png";
+import '../styles/loader.css'
 
 const Pokedex = () => {
   const userName = useSelector((state) => state.userName);
@@ -12,15 +13,23 @@ const Pokedex = () => {
   const [types, setTypes] = useState([]);
   const [offset, setOffset] = useState(0);
   const [nextSet, setNextSet] = useState(0);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon?limit=16&offset=${offset}`)
-      .then((res) => setPokemon(res.data.results));
+      .then((res) => {
+        setPokemon(res.data.results);
+        setLoader(false);
+      });
 
     axios
       .get("https://pokeapi.co/api/v2/type/")
-      .then((res) => setTypes(res.data.results));
+      .then((res) => {
+        setLoader(true);
+        setTypes(res.data.results)
+        setLoader(false)
+      });
   }, [offset]);
 
   const handleTypes = (e) => {
@@ -54,6 +63,9 @@ const Pokedex = () => {
           </section>
         </div>
 
+        {loader ? 
+        <div class="lds-dual-ring"></div>
+        : 
         <ul className="list-pokemon">
           {pokemon.map((pokemon) => (
             <PokemonCard
@@ -61,7 +73,7 @@ const Pokedex = () => {
               pokemonUrl={pokemon.url ? pokemon.url : pokemon.pokemon.url}
             />
           ))}
-        </ul>
+        </ul>}
 
         <div className="pages">
           <ul>

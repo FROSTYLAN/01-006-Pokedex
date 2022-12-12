@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import PokemonCard from "./PokemonCard";
 import Search from "./Search";
-import pokedex from "../images/pokedex.png";
+import headerPokedex from "../images/headerPokedex.png";
 
 const Pokedex = () => {
   const userName = useSelector((state) => state.userName);
@@ -29,22 +29,23 @@ const Pokedex = () => {
 
   return (
     <div>
-      <div className="rectangle nav-pokedex">
-        <div className="img">
-          <img src={pokedex} alt="" />
-        </div>
-        <div className="rectangle small"></div>
-      </div>
+      <header className="w-full">
+        <img src={headerPokedex} className="w-full" alt="header" />
+      </header>
+
       <main>
-        <div className="inicio">
+        <div className="max-w-7xl m-auto">
           <p>
             <b>Welcome {userName}.</b> Here you can find your favorite pokemon.
           </p>
           <br />
-          <section className="search-pokemon">
+          <section className="w-full flex flex-row justify-between">
             <Search />
 
-            <select onChange={(e) => handleTypes(e.target.value)}>
+            <select
+              className="w-1/4 ml-4 pl-2 pr-2"
+              onChange={(e) => handleTypes(e.target.value)}
+            >
               {types.map((type) => (
                 <option key={type.url} value={type.url}>
                   {type.name}
@@ -54,7 +55,7 @@ const Pokedex = () => {
           </section>
         </div>
 
-        <ul className="list-pokemon">
+        <ul className="flex flex-wrap w-full justify-around mt-11">
           {pokemon.map((pokemon) => (
             <PokemonCard
               key={pokemon.url ? pokemon.url : pokemon.pokemon.url}
@@ -63,55 +64,55 @@ const Pokedex = () => {
           ))}
         </ul>
 
-        <div className="pages">
-          <ul>
+        <div className="mt-8 flex justify-center">
+          <ul className="list-none flex">
             {nextSet < 1 ? null : (
               <li
                 onClick={() => setNextSet(nextSet - 1)}
-                className="next-pages"
+                className="w-8 h-8 text-center leading-8 hover:cursor-pointer bg-red-300 text-white"
               >
                 {"<"}
               </li>
             )}
             <li
               onClick={() => setOffset((0 + 7 * nextSet) * 16)}
-              className="page"
+              className="w-8 h-8 text-center leading-8 hover:cursor-pointer"
             >
               {0 + 7 * nextSet}
             </li>
             <li
               onClick={() => setOffset((1 + 7 * nextSet) * 16)}
-              className="page"
+              className="w-8 h-8 text-center leading-8 hover:cursor-pointer"
             >
               {1 + 7 * nextSet}
             </li>
             <li
               onClick={() => setOffset((2 + 7 * nextSet) * 16)}
-              className="page"
+              className="w-8 h-8 text-center leading-8 hover:cursor-pointer"
             >
               {2 + 7 * nextSet}
             </li>
             <li
               onClick={() => setOffset((3 + 7 * nextSet) * 16)}
-              className="page"
+              className="w-8 h-8 text-center leading-8 hover:cursor-pointer"
             >
               {3 + 7 * nextSet}
             </li>
             <li
               onClick={() => setOffset((4 + 7 * nextSet) * 16)}
-              className="page"
+              className="w-8 h-8 text-center leading-8 hover:cursor-pointer"
             >
               {4 + 7 * nextSet}
             </li>
             <li
               onClick={() => setOffset((5 + 7 * nextSet) * 16)}
-              className="page"
+              className="w-8 h-8 text-center leading-8 hover:cursor-pointer"
             >
               {5 + 7 * nextSet}
             </li>
             <li
               onClick={() => setOffset((6 + 7 * nextSet) * 16)}
-              className="page"
+              className="w-8 h-8 text-center leading-8 hover:cursor-pointer"
             >
               {6 + 7 * nextSet}
             </li>
@@ -119,14 +120,14 @@ const Pokedex = () => {
             {nextSet < 9 ? (
               <li
                 onClick={() => setNextSet(nextSet + 1)}
-                className="next-pages"
+                className="w-8 h-8 text-center leading-8 hover:cursor-pointer bg-red-500 text-white"
               >
                 {">"}
               </li>
             ) : (
               <li
                 onClick={() => setOffset((7 + 7 * nextSet) * 16)}
-                className="page"
+                className="w-8 h-8 text-center leading-8 hover:cursor-pointer"
               >
                 {7 + 7 * nextSet}
               </li>

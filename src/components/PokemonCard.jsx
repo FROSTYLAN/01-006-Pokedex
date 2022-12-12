@@ -8,46 +8,49 @@ const PokemonCard = ({ pokemonUrl }) => {
   useEffect(() => {
     axios.get(pokemonUrl).then((res) => setPokemon(res.data));
   }, [pokemonUrl]);
-  console.log(pokemon);
   return (
-    <div className="card">
+    <div className="my-4 w-80 flex justify-center">
       <Link
-        className={`card-pokemon card-${pokemon.types?.[0].type.name}`}
+        className={`rounded-2xl flex flex-col m-2 w-72 no-underline card-${pokemon.types?.[0].type.name}`}
         to={`/pokedex/${pokemon.name}`}
       >
-        <figure className={pokemon.types?.[0].type.name}>
+        <figure className={`text-center ${pokemon.types?.[0].type.name}`}>
           <img
+            className="relative top-8 m-auto"
             width="100px"
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
             alt=""
           />
         </figure>
-        <div className="name-pokemon">
+        <div
+          className="text-center mt-8 pb-2 mb-4"
+          style={{ borderBottom: "1px solid rgb(193, 193, 193)" }}
+        >
           <h2>{pokemon.name}</h2>
           <p>
             {pokemon.types?.length === 2
               ? `${pokemon.types?.[0].type.name}, ${pokemon.types?.[1].type.name}`
               : `${pokemon.types?.[0].type.name}`}
           </p>
-          <span>Type</span>
+          <span className="text-slate-500	">Type</span>
         </div>
-        <div className="stats">
-          <div className="stat">
-            <span>HP</span>
+        <div className="flex justify-around">
+          <div className="w-12 text-center mb-4">
+            <span className="text-slate-500	">HP</span>
             <p>{pokemon.stats?.[0].base_stat}</p>
           </div>
-          <div className="stat">
-            <span>ATTACK</span>
+          <div className="w-12 text-center mb-4">
+            <span className="text-slate-500	">ATTACK</span>
             <p>{pokemon.stats?.[1].base_stat}</p>
           </div>
         </div>
-        <div className="stats">
-          <div className="stat">
-            <span>DEFENSE</span>
+        <div className="flex justify-around">
+          <div className="w-12 text-center mb-4">
+            <span className="text-slate-500	">DEFENSE</span>
             <p> {pokemon.stats?.[2].base_stat}</p>
           </div>
-          <div className="stat">
-            <span>SPEED</span>
+          <div className="w-12 text-center mb-4">
+            <span className="text-slate-500	">SPEED</span>
             <p>{pokemon.stats?.[5].base_stat}</p>
           </div>
         </div>

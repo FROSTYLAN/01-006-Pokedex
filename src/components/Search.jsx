@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import pokemons from "../pokemons.json";
-import "../styles/style-search.css";
 
 const Search = () => {
   const [searchField, setSearchField] = useState("");
@@ -19,21 +18,26 @@ const Search = () => {
   };
 
   return (
-    <div className="search">
+    <div className="w-3/4">
       <label htmlFor="pokemon-name"></label>
       <input
         type="text"
+        className="w-3/4"
         id="pokemon-name"
         placeholder="Search..."
         onChange={(e) => handleChange(e.target.value)}
       />
-      <button>Search</button>
-      <div className="results-container">
+      <button className="w-1/4">Search</button>
+      <div className="absolute w-2/5 bg-white pl-4 z-10">
         {searchField === "" && " "
           ? null
           : results.map((result, i) => (
-              <p>
-                <Link to={`/pokedex/${result}/`} key={i}>
+              <p className="mt-4 mb-4">
+                <Link
+                  className="text-black	no-underline"
+                  to={`/pokedex/${result}/`}
+                  key={i}
+                >
                   {result}
                 </Link>
               </p>
